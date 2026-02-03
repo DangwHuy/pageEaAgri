@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --primary-color: #fe724c;
-  --primary-color-dark: #d6512c;
-  --text-dark: #122b51;
-  --text-light: #6b7d92;
-  --extra-light: #f4f4f4;
+  /* Đổi từ màu cam sang màu xanh lá cây đậm chất nông nghiệp */
+  --primary-color: #43a047; 
+  --primary-color-dark: #2e7d32;
+  --text-dark: #1b3323; /* Xanh đen đậm */
+  --text-light: #58705f; /* Xanh xám nhẹ */
+  --extra-light: #e8f5e9; /* Xanh lá cực nhạt làm nền */
   --white: #ffffff;
   --max-width: 1200px;
 }
@@ -125,7 +126,6 @@ header {
   position: relative;
   isolation: isolate;
   display: grid;
-
   padding-top: 5rem;
 }
 
@@ -195,7 +195,6 @@ header::after {
   display: flex;
   align-items: center;
   gap: 1rem;
-
   animation: scroll-left 30s linear infinite;
 }
 
@@ -206,7 +205,7 @@ header::after {
 }
 
 .workout__images img {
-  max-width: 350px;
+  max-width: 180px;
   border-radius: 1rem;
 }
 
@@ -217,13 +216,14 @@ header::after {
 .story__container {
   display: grid;
   gap: 2rem;
-
   overflow: hidden;
 }
 
 .story__image img {
   max-width: 500px;
   margin-inline: auto;
+  border-radius: 10px; /* Thêm bo góc cho ảnh đẹp hơn */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Thêm bóng đổ nhẹ */
 }
 
 .story__content .section__description {
@@ -244,6 +244,13 @@ header::after {
   color: var(--primary-color);
 }
 
+/* Thêm class mới cho phần kiến trúc để ảnh to hơn */
+.architecture__img img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
 .feature__grid {
   margin-top: 4rem;
   display: grid;
@@ -262,7 +269,10 @@ header::after {
   font-size: 4rem;
   font-weight: 600;
   line-height: 4rem;
-  color: var(--extra-light);
+  color: var(--extra-light); /* Số mờ phía sau */
+  text-shadow: -1px -1px 0 #2e7d32, 1px -1px 0 #2e7d32, -1px 1px 0 #2e7d32, 1px 1px 0 #2e7d32; /* Viền chữ số */
+  -webkit-text-stroke: 1px var(--primary-color); /* Hiệu ứng viền rõ hơn */
+  color: transparent;
 }
 
 .feature__grid h4 {
@@ -284,9 +294,17 @@ header::after {
   max-width: 750px;
   margin-inline: auto;
 }
-
+.download__image img {
+  width: 100%;            /* Ảnh co giãn theo khung */
+  max-width: 200px;       /* Giới hạn độ rộng của mỗi ảnh */
+  border-radius: 20px;    /* Bo tròn góc ảnh (tùy chỉnh số px) */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng cho đẹp (tùy chọn) */
+}
 .download__image {
   margin-top: 4rem;
+  display: flex;          /* Kích hoạt chế độ dàn hàng ngang */
+  justify-content: center; /* Căn giữa 2 ảnh */
+  gap: 2rem;              /* Khoảng cách giữa 2 ảnh */
 }
 
 .membership__container {
@@ -314,7 +332,7 @@ header::after {
 
 .membership__content .section__description span {
   font-size: 1.5rem;
-  color: #ffc529;
+  color: var(--primary-color-dark);
 }
 
 .membership__btn {
@@ -445,6 +463,14 @@ header::after {
 
   .story__content :is(.section__header, .section__description, .story__link) {
     text-align: left;
+  }
+  
+  /* Class hỗ trợ đảo chiều cho các section con */
+  .story__container.reverse .story__image {
+      order: 2;
+  }
+  .story__container.reverse .story__content {
+      order: 1;
   }
 
   .feature__grid {
