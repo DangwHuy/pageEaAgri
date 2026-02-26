@@ -2,7 +2,7 @@
 
 :root {
   /* Đổi từ màu cam sang màu xanh lá cây đậm chất nông nghiệp */
-  --primary-color: #43a047; 
+  --primary-color: #43a047;
   --primary-color-dark: #2e7d32;
   --text-dark: #1b3323; /* Xanh đen đậm */
   --text-light: #58705f; /* Xanh xám nhẹ */
@@ -223,7 +223,7 @@ header::after {
   max-width: 500px;
   margin-inline: auto;
   border-radius: 10px; /* Thêm bo góc cho ảnh đẹp hơn */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Thêm bóng đổ nhẹ */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ nhẹ */
 }
 
 .story__content .section__description {
@@ -246,9 +246,9 @@ header::after {
 
 /* Thêm class mới cho phần kiến trúc để ảnh to hơn */
 .architecture__img img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .feature__grid {
@@ -270,7 +270,11 @@ header::after {
   font-weight: 600;
   line-height: 4rem;
   color: var(--extra-light); /* Số mờ phía sau */
-  text-shadow: -1px -1px 0 #2e7d32, 1px -1px 0 #2e7d32, -1px 1px 0 #2e7d32, 1px 1px 0 #2e7d32; /* Viền chữ số */
+  text-shadow:
+    -1px -1px 0 #2e7d32,
+    1px -1px 0 #2e7d32,
+    -1px 1px 0 #2e7d32,
+    1px 1px 0 #2e7d32; /* Viền chữ số */
   -webkit-text-stroke: 1px var(--primary-color); /* Hiệu ứng viền rõ hơn */
   color: transparent;
 }
@@ -295,16 +299,16 @@ header::after {
   margin-inline: auto;
 }
 .download__image img {
-  width: 100%;            /* Ảnh co giãn theo khung */
-  max-width: 200px;       /* Giới hạn độ rộng của mỗi ảnh */
-  border-radius: 20px;    /* Bo tròn góc ảnh (tùy chỉnh số px) */
+  width: 100%; /* Ảnh co giãn theo khung */
+  max-width: 200px; /* Giới hạn độ rộng của mỗi ảnh */
+  border-radius: 20px; /* Bo tròn góc ảnh (tùy chỉnh số px) */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng cho đẹp (tùy chọn) */
 }
 .download__image {
   margin-top: 4rem;
-  display: flex;          /* Kích hoạt chế độ dàn hàng ngang */
+  display: flex; /* Kích hoạt chế độ dàn hàng ngang */
   justify-content: center; /* Căn giữa 2 ảnh */
-  gap: 2rem;              /* Khoảng cách giữa 2 ảnh */
+  gap: 2rem; /* Khoảng cách giữa 2 ảnh */
 }
 
 .membership__container {
@@ -464,13 +468,13 @@ header::after {
   .story__content :is(.section__header, .section__description, .story__link) {
     text-align: left;
   }
-  
+
   /* Class hỗ trợ đảo chiều cho các section con */
   .story__container.reverse .story__image {
-      order: 2;
+    order: 2;
   }
   .story__container.reverse .story__content {
-      order: 1;
+    order: 1;
   }
 
   .feature__grid {
